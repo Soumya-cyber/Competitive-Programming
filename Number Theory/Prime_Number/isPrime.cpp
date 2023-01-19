@@ -1,12 +1,6 @@
 #include <iostream>
 using namespace std;
  
-// Driver Code
-int main()
-{
-    cout << isPrime(7);
-}
-
 bool isPrime(int n){
 
     if(n==1) return false;
@@ -15,3 +9,10 @@ bool isPrime(int n){
     }
     return true;
 }
+int main()
+{
+    if(isPrime(7)){
+        cout << "Danish tatto korie nilo amra ki korchi?";
+    }
+}
+
