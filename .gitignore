@@ -1,0 +1,4 @@
+#ignore all files in .vscode directory
+.vscode/
+#ignore all files that end with a specific file extension - wildcard selector
+*.exe
