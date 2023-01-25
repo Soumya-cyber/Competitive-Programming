@@ -13,6 +13,27 @@ void pairExplainer()
     cout << p.first << " " << p2.first << " " << arr[0].first << endl;
 }
 
+void dequeExplainer(){
+
+  deque<int> dq;
+  dq.push_back(1);
+  dq.push_front(2);
+  cout << dq.back() << endl;
+  cout << dq.front() << endl;
+  dq.pop_back();
+  dq.pop_front();
+}
+
+void stackExplainer(){
+   stack<int> st;
+   for(int i=0;i<10;i++){
+    st.push(i);
+   }
+
+   cout << st.top() << " "<<st.size() << endl;
+   st.pop();
+   cout << st.empty() << endl;
+}
 void vectorExplainer()
 {
 
@@ -78,7 +99,9 @@ void vectorExplainer()
 int main()
 {
 
-    pairExplainer();
-    vectorExplainer();
+    // pairExplainer();
+    // vectorExplainer();
+    // dequeExplainer();
+    stackExplainer();
     return 0;
 }
