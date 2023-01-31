@@ -1,3 +1,5 @@
+//Practice Problem link: https://www.spoj.com/problems/TDKPRIME/
+
 #include <iostream>
 using namespace std;
 
@@ -5,22 +7,20 @@ void printPrimes(int n){
 
     int arr[n+1];
     for(int i=0;i<=n;i++){
-        arr[i] = 0; // marking every element as zero
+        arr[i] = 1; // marking every number as potential prime numbers
     }
-    // marking the non-prime elements in the array as 1, 
-    //by visiting all the multiples of the prime elements
-
-    // marking needs to be done only upto the square root of the element 
-
-    for(int i=2;i*i<=n;i++){
-        if(arr[i]==0){
-            for(int j=i;j*i<=n;j++){
-                arr[i*j] = 1;
+    arr[0] = 0; arr[1] = 0; // 0 and 1 are not prime numbers
+    for(int i=2;i*i<=n;i++){//i*i<=n because all multiples of prime numbers after sqrt(n) are already marked as non-prime numbers 
+        if(arr[i]==1){
+            //j+=i because we want to mark all the multiples of i as non-prime numbers
+            for(int j=i*i;j<=n;j+=i){ //j=i*i because all the multiples of i before i*i are already marked as non-prime numbers
+                arr[j] = 0;
             }
         }
     }
+    // printing all the prime numbers
     for(int i=2;i<=n;i++){
-        if(arr[i]==0) {
+        if(arr[i]==1) {
             cout<< i << " ";
         }
     }
@@ -28,8 +28,8 @@ void printPrimes(int n){
 
 int main()
 {
-    int n = 50;
-    // cout << "Hello";
+    int n;
+    cin>>n;
     printPrimes(n);
     return 0;
 }
