@@ -1,3 +1,5 @@
+/*https://www.codechef.com/problems/PRB01*/
+
 #include <iostream>
 using namespace std;
  
@@ -11,8 +13,10 @@ bool isPrime(int n){
 }
 int main()
 {
-    if(isPrime(7)){
-        cout << "Danish tatto korie nilo amra ki korchi?";
-    }
+    int n;
+    cin >> n;
+    if(isPrime(n)){
+        cout << "yes";
+    }else cout<<"no";
 }
 
